@@ -1,9 +1,9 @@
 {
-    "name": "laravel/laravel",
+    "name": "freetimeltd/homemanager",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "description": "Open-source platform for house keeping and home management.",
+    "keywords": ["home management", "laravel", "manager", "housekeeping"],
+    "license": "GNU",
     "require": {
         "php": "^8.0.2",
         "barryvdh/laravel-dompdf": "^2.0",
@@ -12,6 +12,7 @@
         "intervention/image": "^2.7",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.8",
+        "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.7",
         "propaganistas/laravel-phone": "^4.3",
         "tightenco/ziggy": "^1.0"
@@ -69,5 +70,9 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/free-time-ltd/homemanager-be/issues",
+        "source": "https://github.com/free-time-ltd/homemanager-be"
+    }
 }

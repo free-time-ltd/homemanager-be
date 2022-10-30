@@ -6,7 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Socialite\Contracts\User as ContractsUser;
 
 class User extends Authenticatable
 {
@@ -41,4 +43,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function makeFromSocial(ContractsUser $user): User
+    {
+        return static::firstOrCreate([
+            'email' => $user->getEmail(),
+        ], [
+            'name' => $user->getName(),
+            'password' => Hash::make(uniqid('', true)),
+            'email_verified_at' => now()
+        ]);
+    }
+
+    public function socials()
+    {
+        return $this->hasMany(UserSocials::class);
+    }
 }
