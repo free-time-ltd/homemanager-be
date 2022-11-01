@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Country;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +17,7 @@ return new class extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId(Country::class)->nullable()->constrained()->cascadeOnDelete();
             $table->string('city');
             $table->string('address');
             $table->string('zip_code')->nullable();
