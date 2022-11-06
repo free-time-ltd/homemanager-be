@@ -196,6 +196,11 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /**
+         * 3prd Party Tools
+         */
+        Spatie\Permission\PermissionServiceProvider::class,
+
+        /**
          * Home manager service provider
          */
         FreeTimeLtd\HomeManager\Core\ManagerProvider::class,
