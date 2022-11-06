@@ -195,6 +195,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Home manager service provider
+         */
+        FreeTimeLtd\HomeManager\Core\ManagerProvider::class,
     ],
 
     /*

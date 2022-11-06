@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use FreeTimeLtd\HomeManager\Database\Seeders\DatabaseSeeder as HomeManagerSeeder;
+use FreeTimeLtd\HomeManager\Core\Database\Seeders\DatabaseSeeder as HomeManagerSeeder;
 
 class DatabaseSeeder extends Seeder
 {

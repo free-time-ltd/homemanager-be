@@ -17,14 +17,15 @@ return new class extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId(Country::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Country::class)->nullable()->constrained()->cascadeOnDelete();
             $table->string('city');
             $table->string('address');
             $table->string('zip_code')->nullable();
-            $table->point('coords', 4326);
+            $table->decimal('lat', 10, 8)->default(0)->nullable();
+            $table->decimal('lng', 11, 8)->default(0)->nullable();
             $table->integer('apartments_total')->nullable();
-            $table->text('notes');
-            $table->string('image_url');
+            $table->text('notes')->nullable();
+            $table->string('image_url')->nullable();
             $table->timestamps();
         });
     }

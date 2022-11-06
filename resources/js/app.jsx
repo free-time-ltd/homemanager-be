@@ -1,6 +1,10 @@
 import './bootstrap';
 import '../css/app.css';
 
+import.meta.glob([
+  '../assets/images/**'
+])
+
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/inertia-react';
